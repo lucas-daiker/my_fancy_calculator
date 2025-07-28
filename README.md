@@ -1,0 +1,2 @@
+This is a project to build a calculator to invest a little time every day to deapen my understanding of C programing and workflow.
+The aim is to brake the calculator into funktions that I can work on one function a day.

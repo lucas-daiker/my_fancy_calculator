@@ -7,12 +7,15 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "SRC/main.c",
+                "SRC/my_functions.c",
+                "-I",
+                "include",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "my_fancy_calculator.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"

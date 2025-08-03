@@ -1,28 +1,19 @@
 #include "stdio.h"
 #include "stdint.h"
+#include "my_functions.h"
 
-#define __max_lnangth 259
- 
-int main ()
+int main (void)
 {
-    uint8_t input[__max_lnangth];
-    printf("Hello to my fancy calculator\n");
-    printf("what would you like to calculate?\n");
+    uint8_t string[256];        //stores the string as it is entered
 
-    for (uint8_t i = 0; i < __max_lnangth; i++)
+    uint16_t numbers[127];      //stores the numbers in the order they are entered
+
+
+    welcome();
+
+    while (1)
     {
-        input[i] = getchar();
-
-        if ((uint8_t)'\n' == input[i])
-        {
-            input[i] = '\0' ;
-            break;
-        }
-        else
-        {
-            printf("%c", input[i]);
-        }
-
+        get_input(string);
     }
     
     return 1;

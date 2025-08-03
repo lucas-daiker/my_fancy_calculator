@@ -1,7 +1,12 @@
 #include "my_functions.h"
 #include <stdio.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include <conio.h>
+
+#define __BLUE   "\033[34m"
+#define __RED    "\033[31m"
+#define __WHITE  "\033[37m"
 
 void welcome(void)
 {
@@ -18,10 +23,14 @@ int get_input(uint8_t* string)
     {
         string[string_pos] = _getch();
         
-        if ('\b' == string[string_pos] && 0 != string_pos)
+        if (isBackspace(string[string_pos]) && 0 != string_pos)
         {
             string_pos--;
-            printf("\b");
+            printf("\b \b");
+        }
+        else if (isNumber(string[string_pos]))
+        {
+            printf(__BLUE "%c" __WHITE, string[string_pos]);
         }
         else
         {
@@ -43,4 +52,14 @@ int get_input(uint8_t* string)
 
     return string_pos;
 
+}
+
+bool isBackspace(uint8_t myChar)
+{
+    return ('\b' == myChar);
+}
+
+bool isNumber (uint8_t myChar)
+{
+    return ((myChar >= '0') && (myChar <= '9'));
 }

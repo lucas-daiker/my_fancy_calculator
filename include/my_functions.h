@@ -8,6 +8,7 @@
 
     bool isBackspace(uint8_t myChar);
     bool isNumber(uint8_t myChar);
+    bool isOperater(uint8_t myChar);
 
 
 #endif
